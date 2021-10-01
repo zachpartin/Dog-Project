@@ -1,6 +1,9 @@
-Title: Dog generator
+Title: Dog Generator
+
 Description: App asks what size dog you are looking for, and gives you a dog breed that matches that size and gives you information on it.
+
 API: https://api.thedogapi.com/v1/breeds
+
 API Snippet:[
     {
         "weight": {
@@ -25,5 +28,13 @@ API Snippet:[
             "height": 1199,
             "url": "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg"
         }
-Wireframe: 
+
+Wireframe: https://whimsical.com/project-1-4xGf3exZxynXbb7AA4mcLe
+
 MVP: 
+- Use an API with a database of different dogs
+- Generate a random breed of dog that falls within the size that the user selects
+- Build with HTML, CSS, and JS
+- Style with flexbox or grid
+- Use a media query/breakpoint to include responsive design
+
