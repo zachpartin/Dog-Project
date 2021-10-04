@@ -1,0 +1,16 @@
+header {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#dogPics {
+  display: flex;
+  flex-direction: row;
+
+  padding-bottom: 40px;
+}
+
+.dogpics {
+  height: 200px;
+  width: 25%;
+}

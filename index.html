@@ -5,9 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="sript.js"></script>
-  <script src="style.css"></script>
+  <link rel="stylesheet" href="style.css">
   <title>Dog Generator</title>
 </head>
+
 <header>
   <h1>Dog Generator</h1>
   <h2>Find inspiration for your next furry friend!</h2>
@@ -15,7 +16,24 @@
 
 <body>
   
+  <div id="dogPics">
+    <img class="dogpics"src="https://cdn1.rottweilerhq.com/wp-content/uploads/2014/04/rottweiler-puppy-adoption.jpg" alt="Rottweiler puppies">
 
+    <img class="dogpics"src="https://ik.imagekit.io/invezz/uploads/tr:f-webp,fo-auto,bl-0,w-420,h-182/2021/07/34490616-l-scaled.jpg" alt="Doge">
+
+    <img class="dogpics" src="https://i.barkpost.com/wp-content/uploads/2015/10/reddit-dog-jokes-13.jpg?q=70&fit=crop&crop=entropy&w=808&h=808" alt="Say cheese">
+  </div>
+
+  <div id="dogSize">
+<form name="sizelist" id="sizelist" action="">
+  What size dog would you like? <br>
+  <select name="selectSize" id="selectSize">
+    <option value="small" id="small">Small (1-30 lbs)</option>
+    <option value="medium" id="medium">Medium (30-50 lbs)</option>
+    <option value="large" id="large">Large (50+ lbs)</option>
+  </select>
+</form>
+  </div>
 
 
 </body>
