@@ -5,9 +5,22 @@
 4. 
 */
 
-console.log("Connected");
+// console.log("Connected");
 
-const newP = document.createElement('p')
-document.body.appendChild(newP);
+const BASE_URL = "https://api.thedogapi.com/v1/breeds"
+const API_KEY = "925c2150-f558-4883-9b84-a3973d3ed76c"
+const API_URL = `${BASE_URL}?${API_KEY}`
+console.log(API_URL);
+
+fetch(API_URL)
+  .then((response) => {
+  return response.json()
+  })
+  .then((responseJson) => {
+    console.log(responseJson)
+  })
+  .catch((error) => {
+  console.log(error)
+})
 
 
