@@ -6,11 +6,19 @@ header {
 #dogPics {
   display: flex;
   flex-direction: row;
-
+  justify-content:center;
   padding-bottom: 40px;
+
 }
 
 .dogpics {
   height: 200px;
   width: 25%;
+}
+
+#dogSize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
