@@ -10,17 +10,34 @@
 const BASE_URL = "https://api.thedogapi.com/v1/breeds"
 const API_KEY = "925c2150-f558-4883-9b84-a3973d3ed76c"
 const API_URL = `${BASE_URL}?${API_KEY}`
+const breedSearchURL = "https://api.thedogapi.com/v1/images/search"
+const breedSearch = `${breedSearchUrl}?${API_KEY}`
+//To find specific breed add 'breed_id=(id)' as query parameter
+
 console.log(API_URL);
 
 fetch(API_URL)
   .then((response) => {
-  return response.json()
+    return response.json();
   })
   .then((responseJson) => {
-    console.log(responseJson)
+    console.log(responseJson);
   })
   .catch((error) => {
-  console.log(error)
+    console.log(error);
 })
+
+// const pullDogBreed = (breedId) => {
+//   fetch(`${API_URL})
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((responseJson) => {
+//     console.log(responseJson);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+// })
+// }
 
 
