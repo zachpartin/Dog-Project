@@ -40,9 +40,13 @@ const pullDogBreed = (breedId) => {
 })
 }
 
-console.log(pullDogBreed(5));
+console.log(pullDogBreed('8'));
 
 
 
 // const dropDown = document.querySelector('#sizeList')
-// dropDown.addEventListener()
+
+// dropDown.addEventListener('change', (event) => {
+//   const selection = document.querySelector('#generateDog');
+
+// })
