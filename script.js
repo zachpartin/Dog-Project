@@ -27,22 +27,30 @@ fetch(API_URL)
     console.log(error);
 })
 
+
+
+// const pullDogBreed = (breedId) => {
+//   fetch(`${breedSearch}${breedId}`)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((responseJson) => {
+//     console.log(responseJson);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+// })
+// }
+
+// console.log(pullDogBreed('8'));
+
 const pullDogBreed = (breedId) => {
-  fetch(`${breedSearch}`+ breedId)
-  .then((response) => {
-    return response.json();
-  })
-  .then((responseJson) => {
-    console.log(responseJson);
-  })
-  .catch((error) => {
-    console.log(error);
-})
+  fetch(`${breedSearch}${breedId}`)
+    .then((res) => {return res.json() })
+    .then((resJson) => {
+      console.log(resJson)
+    })
 }
-
-console.log(pullDogBreed('8'));
-
-
 
 // const dropDown = document.querySelector('#sizeList')
 
