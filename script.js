@@ -7,68 +7,69 @@
 
 // console.log("Connected");
 
-const BASE_URL = "https://api.thedogapi.com/v1/breeds"
-const API_KEY = "925c2150-f558-4883-9b84-a3973d3ed76c"
-const API_URL = `${BASE_URL}?${API_KEY}`
-const breedSearchURL = "https://api.thedogapi.com/v1/images/search"
-const breedSearch = `${breedSearchURL}?${API_KEY}&breed_id=`
+const BASE_URL = "https://api.thedogapi.com/v1/breeds";
+const API_KEY = "925c2150-f558-4883-9b84-a3973d3ed76c";
+const API_URL = `${BASE_URL}?${API_KEY}`;
+const breedSearchURL = "https://api.thedogapi.com/v1/images/search";
+const breedSearch = `${breedSearchURL}?${API_KEY}&breed_id=`;
 //To find specific breed add 'breed_id=(id)' as query parameter
 
 console.log(API_URL);
 
-fetch(API_URL)
-  .then((response) => {
-    return response.json();
-  })
-  .then((responseJson) => {
-    console.log(responseJson);
-  })
-  .catch((error) => {
-    console.log(error);
-})
-
-
-
-const pullDogBreed = (breedId) => {
-  fetch(`${breedSearch}${breedId}`)
-  .then((response) => {
-    return response.json();
-  })
-  .then((responseJson) => {
-    console.log(responseJson);
-  })
-  .catch((error) => {
-    console.log(error);
-})
-}
-
-console.log(pullDogBreed(1));
+// fetch(API_URL)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((responseJson) => {
+//     console.log(responseJson);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // const pullDogBreed = (breedId) => {
 //   fetch(`${breedSearch}${breedId}`)
-//     .then((res) => {return res.json() })
-//     .then((resJson) => {
-//       console.log(resJson)
+//     .then((response) => {
+//       return response.json();
 //     })
-// }
+//     .then((responseJson) => {
+//       console.log(responseJson);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
 
-const randomNumber = () => {
-  return Math.floor(Math.random() * 172);
-}
-console.log(randomNumber());
+async function pullDogBreed(breedId) {
+  
+  let dogFetch = await fetch(`${breedSearch}${breedId}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((responseJson) => {
+      return responseJson;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
+  console.log(pullDogBreed(8));
+
+  const randomNumber = () => {
+    return Math.floor(Math.random() * 172);
+  };
+  console.log(randomNumber());
 
 const dogBreed = () => {
+  pullDogBreed(randomNumber);
+};
 
-}
-console.log(dogBreed());
+  const dropDown = document.querySelector("#selectSize");
+
+  const generateDog = document.querySelector("#generateDog");
 
 
-const dropDown = document.querySelector('#selectSize')
-
-const generateDog = document.querySelector('#generateDog')
-
-dropDown.addEventListener('change', (event) => {
-  generateDog.innerText = pullDogBreed(8);
-  
-})
+  dropDown.addEventListener("change", (event) => {
+    generateDog.innerText = dogBreed();
+  });
