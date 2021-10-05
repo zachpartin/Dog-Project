@@ -52,16 +52,13 @@ console.log(pullDogBreed(1));
 //     })
 // }
 
-const randomNumber() {
-  return Math.random
-
+const randomNumber = () => {
+  return Math.floor(Math.random() * 172);
 }
+console.log(randomNumber());
+
 
 const dogBreed = () => {
-  
-
-  return randomNumber;
-
 
 }
 console.log(dogBreed());
