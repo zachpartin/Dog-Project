@@ -16,18 +16,36 @@ const breedSearch = `${breedSearchURL}?${API_KEY}&breed_id=`;
 
 console.log(API_URL);
 
-// fetch(API_URL)
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((responseJson) => {
-//     console.log(responseJson);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+const fetchDog = fetch(API_URL)
+  .then((response) => {
+    return response.json();
+  })
+  .then((responseJson) => {
+    console.log(responseJson);
+    // generateDog(responseJson);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
-// const pullDogBreed = (breedId) => {
+const pullDogBreed = (breedId) => {
+  fetch(`${breedSearch}${breedId}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((responseJson) => {
+      breed = responseJson;
+      console.log(responseJson);
+      // generateDog(responseJson);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+pullDogBreed(1);
+
+// async function pullDogBreed(breedId) {
+
 //   fetch(`${breedSearch}${breedId}`)
 //     .then((response) => {
 //       return response.json();
@@ -40,36 +58,21 @@ console.log(API_URL);
 //     });
 // };
 
-async function pullDogBreed(breedId) {
-  
-  let dogFetch = await fetch(`${breedSearch}${breedId}`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((responseJson) => {
-      return responseJson;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+const randomNumber = () => {
+  return Math.floor(Math.random() * 172);
 };
-
-  console.log(pullDogBreed(8));
-
-  const randomNumber = () => {
-    return Math.floor(Math.random() * 172);
-  };
-  console.log(randomNumber());
+console.log(randomNumber());
 
 const dogBreed = () => {
   pullDogBreed(randomNumber);
 };
-
+const generateDog = (responseJson) => {
   const dropDown = document.querySelector("#selectSize");
+  const generateDogDiv = document.querySelector("#generateDog");
 
-  const generateDog = document.querySelector("#generateDog");
+  generateDogDiv.innerText = responseJson.breeds.name;
+};
 
-
-  dropDown.addEventListener("change", (event) => {
-    generateDog.innerText = dogBreed();
-  });
+// dropDown.addEventListener("change", (event) => {
+//   generateDogDiv.innerText=
+// });
