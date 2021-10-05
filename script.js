@@ -29,32 +29,49 @@ fetch(API_URL)
 
 
 
-// const pullDogBreed = (breedId) => {
-//   fetch(`${breedSearch}${breedId}`)
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((responseJson) => {
-//     console.log(responseJson);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-// })
-// }
-
-// console.log(pullDogBreed('8'));
-
 const pullDogBreed = (breedId) => {
   fetch(`${breedSearch}${breedId}`)
-    .then((res) => {return res.json() })
-    .then((resJson) => {
-      console.log(resJson)
-    })
+  .then((response) => {
+    return response.json();
+  })
+  .then((responseJson) => {
+    console.log(responseJson);
+  })
+  .catch((error) => {
+    console.log(error);
+})
 }
 
-// const dropDown = document.querySelector('#sizeList')
+console.log(pullDogBreed(1));
 
-// dropDown.addEventListener('change', (event) => {
-//   const selection = document.querySelector('#generateDog');
+// const pullDogBreed = (breedId) => {
+//   fetch(`${breedSearch}${breedId}`)
+//     .then((res) => {return res.json() })
+//     .then((resJson) => {
+//       console.log(resJson)
+//     })
+// }
 
-// })
+const randomNumber() {
+  return Math.random
+
+}
+
+const dogBreed = () => {
+  
+
+  return randomNumber;
+
+
+}
+console.log(dogBreed());
+
+
+const dropDown = document.querySelector('#selectSize')
+
+const generateDog = document.querySelector('#generateDog')
+
+dropDown.addEventListener('change', (event) => {
+  generateDog.innerText = pullDogBreed(8);
+  
+})
