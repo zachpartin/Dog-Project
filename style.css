@@ -22,6 +22,7 @@ header {
   justify-content: center;
   text-align: center;
   margin: 10px;
+  padding-bottom: 30px;
 }
 
 #generateDog {

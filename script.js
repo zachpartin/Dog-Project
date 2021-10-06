@@ -13,10 +13,11 @@ const breedSearchURL = "https://api.thedogapi.com/v1/images/search";
 const breedSearch = `${breedSearchURL}?${API_KEY}&breed_id=`;
 //To find specific breed add 'breed_id=(id)' as query parameter
 
-let currentBreed = {}
-
-
 console.log(API_URL);
+
+
+
+let currentBreed = {}
 
 const fetchDog = () => {
   fetch(API_URL)
@@ -86,6 +87,7 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
 
   const weightRange = currentBreed[(randoNum)].weight.imperial.match(/\d+/g);
   //got match(/\d+/g) from https://stackoverflow.com/questions/8420890/extracting-multiple-integers-from-a-string-in-javascript
+  
   console.log(weightRange);
   const minWeight = weightRange[0];
   const maxWeight = weightRange[1];
@@ -96,7 +98,7 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
     generateDogDiv.innerText = currentBreed[(randoNum)].name;
     dogPicDiv.src = currentBreed[(randoNum)].image.url;
     lifeSpanDiv.innerText = `Lifespan: ${currentBreed[(randoNum)].life_span}`;
-    weightDiv.innerText = `Weight: ${currentBreed[(randoNum)].weight.imperial}`
+    weightDiv.innerText = `Weight: ${currentBreed[(randoNum)].weight.imperial} lbs`
     temperamentDiv.innerText = `Temperament: ${currentBreed[(randoNum)].temperament}`;
   } else {
     generateDog(currentBreed, ddMinWeight, ddMaxWeight);
