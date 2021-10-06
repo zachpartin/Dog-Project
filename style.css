@@ -53,6 +53,7 @@ header {
   justify-content: center;
   font-size: 24px;
   font-family: 'Raleway', sans-serif;
+  height: 40px;
 }
 
 #dogPic {
@@ -91,11 +92,16 @@ header {
   #dogPics {
     display: flex;
     flex-direction: column;
-    height: 400px;
+    /* align-items:flex-start; */
+    height: 350px;
+  }
+  #dogSize{
+    margin: 30px 20px 30px 20px;
+    height: 125px;
   }
   .dogpics {
-    height: 20vh;
-    width: 35vh; 
+    height: 160px;
+    width: 300px; 
   }
   #dogPic{
     height: 40vh;
