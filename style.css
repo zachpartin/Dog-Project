@@ -5,7 +5,7 @@ header {
 #dogPics {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   height: 400px;
   /* background-color: lightcoral; */
@@ -15,7 +15,8 @@ header {
   height: 200px;
   width: 350px;
   margin: 5px;
-  border-radius: 15px;}
+  border-radius: 15px;
+}
 
 #dogSize {
   display: flex;
@@ -26,24 +27,24 @@ header {
 }
 
 #generateDog {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 #dogPic {
   height: 500px;
-  width:600px;
+  width: 600px;
 }
 
 #dogPicDiv {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
 #lifeSpan {
   padding-top: 10px;
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 #weight {
@@ -53,13 +54,13 @@ header {
 }
 
 #temperament {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 700px) {
-#dogPics {
-  display:flex;
-  flex-direction: column;
-}
+  #dogPics {
+    display: flex;
+    flex-direction: column;
+  }
 }
