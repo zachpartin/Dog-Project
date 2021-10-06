@@ -24,7 +24,6 @@ const fetchDog = () => {
     })
     .then((responseJson) => {
       console.log(responseJson);
-      // generateDog(responseJson);
       currentBreed = responseJson;
     })
     .catch((error) => {
@@ -32,44 +31,14 @@ const fetchDog = () => {
     });
 };
 console.log(fetchDog());
-// const pullDogBreed = (breedId) => {
-//   fetch(`${breedSearch}${breedId}`)
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((responseJson) => {
-//       console.log(responseJson);
-//       currentBreed = responseJson;
-//       generateDog(responseJson);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
-// pullDogBreed(50);
 
-// async function pullDogBreed(breedId) {
-
-//   fetch(`${breedSearch}${breedId}`)
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((responseJson) => {
-//       console.log(responseJson);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
 
 const randomNumber = () => {
   return Math.floor(Math.random() * 172);
 };
 console.log(randomNumber());
 
-// const dogBreed = () => {
-//   pullDogBreed(randomNumber);
-// };
+
 
 const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
   // const dropDown = document.querySelector("#selectSize");
@@ -98,6 +67,7 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
     temperamentDiv.innerText = `Temperament: ${currentBreed[randoNum].temperament}`;
   } else {
     generateDog(currentBreed, ddMinWeight, ddMaxWeight);
+
   }
   // generateDogDiv.innerText = currentBreed[(randoNum)].name;
   // dogPicDiv.src = currentBreed[(randoNum)].image.url;
