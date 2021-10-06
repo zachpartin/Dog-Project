@@ -38,6 +38,8 @@ MVP:
 - Style with flexbox or grid
 - Use a media query/breakpoint to include responsive design
 
+PMVP:
+- Style the page to look decent
 
 Wireframe: https://whimsical.com/project-1-4xGf3exZxynXbb7AA4mcLe
 
