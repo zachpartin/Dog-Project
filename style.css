@@ -7,17 +7,15 @@ header {
   flex-direction: row;
   justify-content:center;
   align-items: center;
-  height: 300px;
+  height: 400px;
   /* background-color: lightcoral; */
 }
 
 .dogpics {
-  height: 300px;
-  width: 500px;
-  margin: 10px;
-  border-radius: 15px;
-  
-}
+  height: 200px;
+  width: 350px;
+  margin: 5px;
+  border-radius: 15px;}
 
 #dogSize {
   display: flex;
@@ -35,7 +33,6 @@ header {
 #dogPic {
   height: 500px;
   width:600px;
-  display:flex;
 }
 
 #dogPicDiv {
@@ -58,4 +55,8 @@ header {
 #temperament {
   display:flex;
   justify-content:center;
+}
+
+@media (max-width) {
+  
 }
