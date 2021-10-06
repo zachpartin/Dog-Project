@@ -76,6 +76,11 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
   // const dropDown = document.querySelector("#selectSize");
   const generateDogDiv = document.querySelector("#generateDog");
   const dogPicDiv = document.querySelector('#dogPic');
+  const lifeSpanDiv = document.querySelector('#lifeSpan');
+  const weightDiv = document.querySelector('#weight')
+  const temperamentDiv = document.querySelector('#temperament');
+
+
   let randoNum = randomNumber();
 
 
@@ -89,14 +94,18 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
   
   if (minWeight < ddMaxWeight && maxWeight > ddMinWeight) {
     generateDogDiv.innerText = currentBreed[(randoNum)].name;
-  dogPicDiv.src = currentBreed[(randoNum)].image.url;
+    dogPicDiv.src = currentBreed[(randoNum)].image.url;
+    lifeSpanDiv.innerText = `Lifespan: ${currentBreed[(randoNum)].life_span}`;
+    weightDiv.innerText = `Weight: ${currentBreed[(randoNum)].weight.imperial}`
+    temperamentDiv.innerText = `Temperament: ${currentBreed[(randoNum)].temperament}`;
   } else {
     generateDog(currentBreed, ddMinWeight, ddMaxWeight);
+    console.log('try again')
   }
   // generateDogDiv.innerText = currentBreed[(randoNum)].name;
   // dogPicDiv.src = currentBreed[(randoNum)].image.url;
 
-  
+
 };
 
 const dropDown = document.querySelector("#selectSize");

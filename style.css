@@ -30,12 +30,29 @@ header {
 }
 
 #dogPic {
-  height: 300px;
-  width:350px;
+  height: 500px;
+  width:600px;
   display:flex;
 }
 
 #dogPicDiv {
   display:flex;
   justify-content: center;
+}
+
+#lifeSpan {
+  padding-top: 10px;
+  display:flex;
+  justify-content:center;
+}
+
+#weight {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#temperament {
+  display:flex;
+  justify-content:center;
 }
