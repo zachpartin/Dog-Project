@@ -57,6 +57,9 @@ header {
   justify-content:center;
 }
 
-@media (max-width) {
-  
+@media (max-width: 700px) {
+#dogPics {
+  display:flex;
+  flex-direction: column;
+}
 }
