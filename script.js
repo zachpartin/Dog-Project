@@ -72,20 +72,44 @@ console.log(randomNumber());
 //   pullDogBreed(randomNumber);
 // };
 
-const generateDog = (currentBreed) => {
+const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
   // const dropDown = document.querySelector("#selectSize");
   const generateDogDiv = document.querySelector("#generateDog");
-  const dogPicDiv = document.querySelector('#dogPic')
-  const randoNum = randomNumber();
+  const dogPicDiv = document.querySelector('#dogPic');
+  let randoNum = randomNumber();
 
-  generateDogDiv.innerText = currentBreed[(randoNum)].name;
+
+  const weightRange = currentBreed[(randoNum)].weight.imperial.match(/\d+/g);
+  //got match(/\d+/g) from https://stackoverflow.com/questions/8420890/extracting-multiple-integers-from-a-string-in-javascript
+  console.log(weightRange);
+  const minWeight = weightRange[0];
+  const maxWeight = weightRange[1];
+  console.log(minWeight); 
+  console.log(maxWeight);
+  
+  if (minWeight < ddMaxWeight && maxWeight > ddMinWeight) {
+    generateDogDiv.innerText = currentBreed[(randoNum)].name;
   dogPicDiv.src = currentBreed[(randoNum)].image.url;
+  } else {
+    generateDog(currentBreed, ddMinWeight, ddMaxWeight);
+  }
+  // generateDogDiv.innerText = currentBreed[(randoNum)].name;
+  // dogPicDiv.src = currentBreed[(randoNum)].image.url;
+
+  
 };
 
 const dropDown = document.querySelector("#selectSize");
 const generateDogDiv = document.querySelector("#generateDog");
 
-
 dropDown.addEventListener("change", (event) => {
-  generateDog(currentBreed);
+  
+
+  if (dropDown.value === 'small') {
+    generateDog(currentBreed, 0, 30);
+  } else if (dropDown.value === 'medium'){
+    generateDog(currentBreed,30,50)
+  } else if (dropDown.value === 'large') {
+    generateDog(currentBreed, 50, 1000)
+  }
 });
