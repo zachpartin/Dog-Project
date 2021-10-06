@@ -23,3 +23,19 @@ header {
   text-align: center;
   margin: 10px;
 }
+
+#generateDog {
+  display:flex;
+  justify-content:center;
+}
+
+#dogPic {
+  height: 300px;
+  width:350px;
+  display:flex;
+}
+
+#dogPicDiv {
+  display:flex;
+  justify-content: center;
+}

@@ -6,7 +6,6 @@
 */
 
 // console.log("Connected");
-
 const BASE_URL = "https://api.thedogapi.com/v1/breeds";
 const API_KEY = "925c2150-f558-4883-9b84-a3973d3ed76c";
 const API_URL = `${BASE_URL}?${API_KEY}`;
@@ -14,35 +13,41 @@ const breedSearchURL = "https://api.thedogapi.com/v1/images/search";
 const breedSearch = `${breedSearchURL}?${API_KEY}&breed_id=`;
 //To find specific breed add 'breed_id=(id)' as query parameter
 
+let currentBreed = {}
+
+
 console.log(API_URL);
 
-const fetchDog = fetch(API_URL)
-  .then((response) => {
-    return response.json();
-  })
-  .then((responseJson) => {
-    console.log(responseJson);
-    // generateDog(responseJson);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-const pullDogBreed = (breedId) => {
-  fetch(`${breedSearch}${breedId}`)
+const fetchDog = () => {
+  fetch(API_URL)
     .then((response) => {
       return response.json();
     })
     .then((responseJson) => {
-      breed = responseJson;
       console.log(responseJson);
       // generateDog(responseJson);
+      currentBreed = responseJson;
     })
     .catch((error) => {
       console.log(error);
     });
-};
-pullDogBreed(1);
+}
+console.log(fetchDog())
+// const pullDogBreed = (breedId) => {
+//   fetch(`${breedSearch}${breedId}`)
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((responseJson) => {
+//       console.log(responseJson);
+//       currentBreed = responseJson;
+//       generateDog(responseJson);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+// pullDogBreed(50);
 
 // async function pullDogBreed(breedId) {
 
@@ -63,16 +68,24 @@ const randomNumber = () => {
 };
 console.log(randomNumber());
 
-const dogBreed = () => {
-  pullDogBreed(randomNumber);
-};
-const generateDog = (responseJson) => {
-  const dropDown = document.querySelector("#selectSize");
+// const dogBreed = () => {
+//   pullDogBreed(randomNumber);
+// };
+
+const generateDog = (currentBreed) => {
+  // const dropDown = document.querySelector("#selectSize");
   const generateDogDiv = document.querySelector("#generateDog");
+  const dogPicDiv = document.querySelector('#dogPic')
+  const randoNum = randomNumber();
 
-  generateDogDiv.innerText = responseJson.breeds.name;
+  generateDogDiv.innerText = currentBreed[(randoNum)].name;
+  dogPicDiv.src = currentBreed[(randoNum)].image.url;
 };
 
-// dropDown.addEventListener("change", (event) => {
-//   generateDogDiv.innerText=
-// });
+const dropDown = document.querySelector("#selectSize");
+const generateDogDiv = document.querySelector("#generateDog");
+
+
+dropDown.addEventListener("change", (event) => {
+  generateDog(currentBreed);
+});
