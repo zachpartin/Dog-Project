@@ -8,14 +8,17 @@ header {
   
     text-align: center;
     font-family: "Raleway", sans-serif;
-    background-color: lightgray;
+    background-color: white;
     height: 115px;
     border: solid;
     padding: 0px 0px 25px 0px;
-    margin: 0px 20px
+    width: 600px;
+    margin: auto;
 }
 
-
+body{
+  background-color: #f5f5f5
+}
 
 
 h1 {
@@ -51,9 +54,9 @@ h3 {
   padding: 30px;
   height: 80px;
   font-family: "Raleway", sans-serif; font-size: 20px;
-  background-color: lightgray;
+  background-color: white;
   border-style: solid;
-  width: 400px
+  width: 300px
 }
 
 #sizeList {
@@ -115,6 +118,7 @@ h3 {
 @media (max-width: 700px) {
   header {
     margin:auto;
+    width: 400px;
   }
   
   #dogPics {
@@ -124,9 +128,9 @@ h3 {
     height: 400px;
   }
   #dogSize {
-    margin: 0px 30px;
+    margin: auto;
     height: 90px;
-    width: auto;
+    width: 300px;
   }
   .dogpics {
     height: 160px;
@@ -136,11 +140,16 @@ h3 {
   #dogPic {
     height: 40vh;
     width: 55vh;
+    background-size: 55vh 40vh
   }
 }
 
 @media (max-width: 420px) {
-h1 {
+header{
+  width:auto;
+}
+
+  h1 {
   font-size: 27px;
   margin-top: 30px;
 }
@@ -151,6 +160,7 @@ font-size: 15px;
 
 #dogSize {
   font-size:17px;
+  width:auto;
 }
 
 }

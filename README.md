@@ -40,6 +40,7 @@ MVP:
 
 PMVP:
 - Style the page to look decent
+- Add background image to fill space where dog image will
 
 Wireframe: https://whimsical.com/project-1-4xGf3exZxynXbb7AA4mcLe
 
