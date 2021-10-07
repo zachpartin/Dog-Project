@@ -80,6 +80,11 @@ h3 {
   border: lightgray;
   border-style: solid;
   background-color: lightgray;
+  background-image: url(https://lirp.cdn-website.com/7ece8951/dms3rep/multi/opt/GettyImages-544673512-960w.jpg);
+  background-size: 600px 450px;
+  background-size: 700px 450px;
+  background-position: center;
+  background-blend-mode: luminosity;
 }
 
 #dogPicDiv {
@@ -108,6 +113,10 @@ h3 {
 }
 
 @media (max-width: 700px) {
+  header {
+    margin:auto;
+  }
+  
   #dogPics {
     display: flex;
     flex-direction: column;
@@ -122,6 +131,7 @@ h3 {
   .dogpics {
     height: 160px;
     width: 300px;
+    margin: 10px;
   }
   #dogPic {
     height: 40vh;
