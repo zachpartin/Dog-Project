@@ -5,29 +5,28 @@ header {
   font-family: "Raleway", sans-serif;
   background-color: lightgray;
   height: 100px; */
-  
-    text-align: center;
-    font-family: "Raleway", sans-serif;
-    background-color: white;
-    height: 115px;
-    border: solid;
-    padding: 0px 0px 25px 0px;
-    width: 600px;
-    margin: auto;
+
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  background-color: white;
+  height: 115px;
+  border: solid;
+  padding: 0px 0px 25px 0px;
+  width: 600px;
+  margin: auto;
 }
 
-body{
-  background-color: #f5f5f5
+body {
+  background-color: #f5f5f5;
 }
-
 
 h1 {
   font-size: 35px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 h3 {
-  font-weight:normal;
+  font-weight: normal;
 }
 #dogPics {
   display: flex;
@@ -53,10 +52,11 @@ h3 {
   margin: auto;
   padding: 30px;
   height: 80px;
-  font-family: "Raleway", sans-serif; font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
   background-color: white;
   border-style: solid;
-  width: 300px
+  width: 300px;
 }
 
 #sizeList {
@@ -117,10 +117,10 @@ h3 {
 
 @media (max-width: 700px) {
   header {
-    margin:auto;
+    margin: auto;
     width: 400px;
   }
-  
+
   #dogPics {
     display: flex;
     flex-direction: column;
@@ -140,27 +140,26 @@ h3 {
   #dogPic {
     height: 40vh;
     width: 55vh;
-    background-size: 55vh 40vh
+    background-size: 55vh 40vh;
   }
 }
 
 @media (max-width: 420px) {
-header{
-  width:auto;
-}
+  header {
+    width: auto;
+  }
 
   h1 {
-  font-size: 27px;
-  margin-top: 30px;
-}
+    font-size: 27px;
+    margin-top: 30px;
+  }
 
-h3{
-font-size: 15px;
-}
+  h3 {
+    font-size: 15px;
+  }
 
-#dogSize {
-  font-size:17px;
-  width:auto;
-}
-
+  #dogSize {
+    font-size: 17px;
+    width: auto;
+  }
 }

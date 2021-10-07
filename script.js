@@ -15,7 +15,9 @@ const API_URL = `${BASE_URL}?${API_KEY}`;
 
 console.log(API_URL);
 
-let currentBreed = {};
+
+
+let breed;
 
 const fetchDog = () => {
   fetch(API_URL)
@@ -24,7 +26,7 @@ const fetchDog = () => {
     })
     .then((responseJson) => {
       console.log(responseJson);
-      currentBreed = responseJson;
+      breed = responseJson;
     })
     .catch((error) => {
       console.log(error);
@@ -40,7 +42,7 @@ console.log(randomNumber());
 
 
 
-const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
+const generateDog = (breed, ddMinWeight, ddMaxWeight) => {
   // const dropDown = document.querySelector("#selectSize");
   const generateDogDiv = document.querySelector("#generateDog");
   const dogPicDiv = document.querySelector("#dogPic");
@@ -50,7 +52,7 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
 
   let randoNum = randomNumber();
 
-  const weightRange = currentBreed[randoNum].weight.imperial.match(/\d+/g);
+  const weightRange = breed[randoNum].weight.imperial.match(/\d+/g);
   //got match(/\d+/g) from https://stackoverflow.com/questions/8420890/extracting-multiple-integers-from-a-string-in-javascript
 
   console.log(weightRange);
@@ -60,28 +62,29 @@ const generateDog = (currentBreed, ddMinWeight, ddMaxWeight) => {
   console.log(maxWeight);
 
   if (minWeight < ddMaxWeight && maxWeight > ddMinWeight) {
-    generateDogDiv.innerText = currentBreed[randoNum].name;
-    dogPicDiv.src = currentBreed[randoNum].image.url;
-    lifeSpanDiv.innerText = `Lifespan: ${currentBreed[randoNum].life_span}`;
-    weightDiv.innerText = `Weight: ${currentBreed[randoNum].weight.imperial} lbs`;
-    temperamentDiv.innerText = `Temperament: ${currentBreed[randoNum].temperament}`;
+    generateDogDiv.innerText = breed[randoNum].name;
+    dogPicDiv.src = breed[randoNum].image.url;
+    lifeSpanDiv.innerText = `Lifespan: ${breed[randoNum].life_span}`;
+    weightDiv.innerText = `Weight: ${breed[randoNum].weight.imperial} lbs`;
+    temperamentDiv.innerText = `Temperament: ${breed[randoNum].temperament}`;
   } else {
-    generateDog(currentBreed, ddMinWeight, ddMaxWeight);
+    generateDog(breed, ddMinWeight, ddMaxWeight);
 
   }
-  // generateDogDiv.innerText = currentBreed[(randoNum)].name;
-  // dogPicDiv.src = currentBreed[(randoNum)].image.url;
+  // generateDogDiv.innerText = breed[(randoNum)].name;
+  // dogPicDiv.src = breed[(randoNum)].image.url;
 };
 
 const dropDown = document.querySelector("#selectSize");
 const generateDogDiv = document.querySelector("#generateDog");
 
 dropDown.addEventListener("change", (event) => {
+  
   if (dropDown.value === "small") {
-    generateDog(currentBreed, 0, 30);
+    generateDog(breed, 0, 30);
   } else if (dropDown.value === "medium") {
-    generateDog(currentBreed, 30, 50);
+    generateDog(breed, 30, 50);
   } else if (dropDown.value === "large") {
-    generateDog(currentBreed, 50, 1000);
+    generateDog(breed, 50, 1000);
   }
 });
